@@ -1,3 +1,6 @@
+/* * {
+  border: 1px dotted pink;
+} */
 .expense-item {
     display: flex;
     justify-content: space-between;
