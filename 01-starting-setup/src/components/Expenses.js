@@ -1,7 +1,6 @@
 import ExpenseItem from './ExpenseItem';
 import './Expenses.css';
 
-
 function Expenses(props) {
     console.log("expenses props", props)
     return (
@@ -29,5 +28,6 @@ function Expenses(props) {
         </div>
     );
 }
+
 
 export default Expenses;
