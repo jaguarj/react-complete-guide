@@ -6,11 +6,11 @@ import './ExpenseItem.css';
 const ExpenseItem = props => {
 	const [title, setTitle] = useState(props.title);
 	// Built a counter
-	let [count, setCount] = useState(0);
+	// let [count, setCount] = useState(0);
 
 	const clickHandler = () => {
 		// Updated the count value.
-		setCount(++count);
+		// setCount(++count);
 		setTitle("updated!!");
 	};
 
