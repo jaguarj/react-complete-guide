@@ -6,7 +6,7 @@ import './Expenses.css';
 
 const Expenses = (props) => {
     const [enteredFilteredDate, setEnteredFilteredDate] = useState('2020');
-    
+
     const expensesFilterChangeDateHandler = (enteredExpensesFilterDate) => {
         setEnteredFilteredDate(enteredExpensesFilterDate);
     };
@@ -14,6 +14,8 @@ const Expenses = (props) => {
     return (
         <div>
             <Card className="expenses">
+                {/* 'selected' is the initial state I want as a default. */}
+                {/* 'onExpensesFilterChangeData' is the state that will change/set by the users' selection. */}
             <ExpenseFilter selected={enteredFilteredDate} onExpensesFilterChangeData={expensesFilterChangeDateHandler}/>
                 <ExpenseItem
                     title={props.data[0].title}
