@@ -19,6 +19,8 @@ const ExpenseItem = props => {
 	// 	setTitle("updated!!");
 	// };
 
+	console.log("I see props in ExpenseItem.js", props);
+
 	return (
 		<div>
 			<Card className="expense-item">
