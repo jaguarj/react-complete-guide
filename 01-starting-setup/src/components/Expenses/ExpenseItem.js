@@ -22,7 +22,7 @@ const ExpenseItem = props => {
 	console.log("I see props in ExpenseItem.js", props);
 
 	return (
-		<div>
+		<li>
 			<Card className="expense-item">
 				<ExpenseDate date={props.date}></ExpenseDate>
 				<div className="expense-item__description">
@@ -32,7 +32,7 @@ const ExpenseItem = props => {
 					{/* <button onClick={clickHandler}>Change Title</button> */}
 				</div>
 			</Card>
-		</div>
+		</li>
 	);
 };
 

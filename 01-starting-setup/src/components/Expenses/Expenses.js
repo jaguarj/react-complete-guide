@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ExpenseFilter from './ExpenseFilter';
-import ExpenseItem from './ExpenseItem';
+import ExpensesList from './ExpensesList';
 import Card from '../UI/Card';
 import './Expenses.css';
 
@@ -18,25 +18,13 @@ const Expenses = (props) => {
         setEnteredFilteredDate(enteredExpensesFilterDate);
     };
 
-    let expenseContent = <p>No Expenses found...</p>;
-
-    if (filteredExpensesArray.length > 0) {
-        expenseContent = filteredExpensesArray.map(expense => (
-            <ExpenseItem
-                key={expense.id}
-                title={expense.title}
-                amount={expense.amount}
-                date={expense.date} />
-        ))
-    };
-
     return (
         <div>
             <Card className="expenses">
                 {/* 'selected' is the initial state I want as a default. */}
                 {/* 'onExpensesFilterChangeData' is the state that will change/set by the users' selection. */}
                 <ExpenseFilter selected={enteredFilteredDate} onExpensesFilterChangeData={expensesFilterChangeDateHandler} />
-                {expenseContent}
+                <ExpensesList data={filteredExpensesArray}/>
             </Card>
         </div>
     );
