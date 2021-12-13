@@ -8,7 +8,7 @@ const Expenses = (props) => {
     // 1. Set the initial date for the expenses list.
     const [enteredFilteredDate, setEnteredFilteredDate] = useState('2020');
 
-    // 2. Filter out the expense list by the filtered date year .
+    // 2. Filter out the expense list by the filtered date year.
     // Filter method returns a new array and does not mutate the initial array.
     const filteredExpensesArray = props.data.filter(expense => {
         return expense.date.getFullYear().toString() === enteredFilteredDate;
