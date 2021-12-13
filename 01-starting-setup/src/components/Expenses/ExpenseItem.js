@@ -34,6 +34,6 @@ const ExpenseItem = props => {
 			</Card>
 		</div>
 	);
-}
+};
 
 export default ExpenseItem;

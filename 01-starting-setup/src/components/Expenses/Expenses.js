@@ -18,25 +18,29 @@ const Expenses = (props) => {
         setEnteredFilteredDate(enteredExpensesFilterDate);
     };
 
+    let expenseContent = <p>No Expenses found...</p>;
+
+    if (filteredExpensesArray.length > 0) {
+        expenseContent = filteredExpensesArray.map(expense => (
+            <ExpenseItem
+                key={expense.id}
+                title={expense.title}
+                amount={expense.amount}
+                date={expense.date} />
+        ))
+    };
+
     return (
         <div>
             <Card className="expenses">
                 {/* 'selected' is the initial state I want as a default. */}
                 {/* 'onExpensesFilterChangeData' is the state that will change/set by the users' selection. */}
                 <ExpenseFilter selected={enteredFilteredDate} onExpensesFilterChangeData={expensesFilterChangeDateHandler} />
-                {filteredExpensesArray.length === 0 && <p>No expenses found...</p>}
-                {filteredExpensesArray.length > 0 &&
-                    filteredExpensesArray.map(expense => (
-                    <ExpenseItem
-                        key={expense.id}
-                        title={expense.title}
-                        amount={expense.amount}
-                        date={expense.date} />
-                ))}
+                {expenseContent}
             </Card>
         </div>
     );
-}
+};
 
 
 export default Expenses;
