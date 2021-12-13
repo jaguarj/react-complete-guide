@@ -41,9 +41,16 @@ const App = () => {
     // using the function passed as an argument to the setExpenses().
     // prevExpenses is given to you by default as the last state snapshot.
     // So no need to fret about what or where this variable is coming from.
+
+    
+
     setExpenses((prevExpenses) => { 
+      // Need to have a new button for when to toggle the add the expense form.
+      // Need to hide the expense when setting.
+      
       return [expense, ...prevExpenses] 
     });
+
   };
 
   return (
