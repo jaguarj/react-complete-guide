@@ -24,7 +24,9 @@ const Expenses = (props) => {
                 {/* 'selected' is the initial state I want as a default. */}
                 {/* 'onExpensesFilterChangeData' is the state that will change/set by the users' selection. */}
                 <ExpenseFilter selected={enteredFilteredDate} onExpensesFilterChangeData={expensesFilterChangeDateHandler} />
-                {filteredExpensesArray.map(expense => (
+                {filteredExpensesArray.length === 0 && <p>No expenses found...</p>}
+                {filteredExpensesArray.length > 0 &&
+                    filteredExpensesArray.map(expense => (
                     <ExpenseItem
                         key={expense.id}
                         title={expense.title}
