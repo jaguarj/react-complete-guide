@@ -35,7 +35,7 @@ const App = () => {
     console.log(expense);
     // prevExpenses is already the last state by default when 
     // using the function passed as an argument to the setExpenses().
-    // preExpenses is given to you by default as the last state snapshot.
+    // prevExpenses is given to you by default as the last state snapshot.
     // So no need to fret about what or where this variable is coming from.
     setExpenses((prevExpenses) => { 
       return [expense, ...prevExpenses] 
