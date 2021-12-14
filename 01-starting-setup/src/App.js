@@ -35,8 +35,6 @@ const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
   const addExpenseHandler = expense => {
-    console.log("In App.js");
-    console.log(expense);
     // prevExpenses is already the last state by default when 
     // using the function passed as an argument to the setExpenses().
     // prevExpenses is given to you by default as the last state snapshot.
