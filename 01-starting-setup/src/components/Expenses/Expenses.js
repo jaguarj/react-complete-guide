@@ -6,7 +6,7 @@ import './Expenses.css';
 
 const Expenses = (props) => {
     // 1. Set the initial date for the expenses list.
-    const [enteredFilteredDate, setEnteredFilteredDate] = useState('2020');
+    const [enteredFilteredDate, setEnteredFilteredDate] = useState('2021');
 
     // 2. Filter out the expense list by the filtered date year.
     // Filter method returns a new array and does not mutate the initial array.

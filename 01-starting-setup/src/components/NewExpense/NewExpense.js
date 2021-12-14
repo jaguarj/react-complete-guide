@@ -1,29 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './NewExpense.css';
 import ExpenseForm from './ExpenseForm';
 
 const NewExpense = (props) => {
-
-    // console.log("props ", props)
-    // Need to be able to hid the expense form after a new expense has
-    // been added.
-
-    // Need to hide the expense form on 'cancel' when clicked.
-
+    const [addNewExpenses, setAddNewExpenses] = useState(false)
+    
     const saveExpenseDataHandler = (enteredExpenseData) => {
         const expenseData = {
             ...enteredExpenseData,
             id: Math.random().toString()
         };
-        console.log("expenseData", expenseData)
+
         props.onAddNewExpense(expenseData);
+        setAddNewExpenses(false);
     };
 
+    const addNewExpensesHandler = () => {
+        setAddNewExpenses(true);
+    };
+
+    const cancelHandler = () => {
+        setAddNewExpenses(false);
+    };
 
     return (
         <div className="new-expense">
-            <ExpenseForm onSaveExpenseData={saveExpenseDataHandler}/>
-            {/* <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancelExpense={cancelExpenseDataHandler}/> */}
+            {!addNewExpenses && <button type='submit' onClick={addNewExpensesHandler}>Add New Expense</button>}
+            {addNewExpenses && <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancel={cancelHandler}/>}
         </div>
     );
 };
