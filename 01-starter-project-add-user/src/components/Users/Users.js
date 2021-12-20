@@ -7,10 +7,14 @@ import './Users.css';
 const Users = (props) => {
     console.log("Inside users, props", props)
 
+    const addNewUserPayload = (user) => {
+        console.log("user", user)
+    }
+
     return (
         <div>
             <Card>
-                <NewUserForm />
+                <NewUserForm addNewUserPayload={addNewUserPayload}/>
                 <UsersList userDataList={props.data}></UsersList>
             </Card>
         </div>
