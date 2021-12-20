@@ -8,7 +8,8 @@ const NewUserForm = (props) => {
     // 3. Clear form on submit.
     // 4. Add new user to list.
 
-    const [addEnteredUser, setAddEnteredUser] = useState('')
+    const [addEnteredUser, setAddEnteredUser] = useState('');
+    // Pick here tomorrow from when you left off. Compare CourseInput.js to this file.
 
     const enteredUser = (e) => {
         console.log("e.t.v", e.currentTarget.value)
@@ -29,7 +30,6 @@ const NewUserForm = (props) => {
         //     alert("user is left blank...");
         //     return
         // }
-        console.log()
         props.addNewUserPayload(addEnteredUser);
     };
 
