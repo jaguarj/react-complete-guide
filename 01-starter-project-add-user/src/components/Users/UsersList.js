@@ -6,7 +6,7 @@ const UsersList = (props) => {
     console.log("Inside UsersList", props);
 
     return (
-           <ul>
+           <ul className="ul">
             {props.userDataList.map(user => (
                 <UsersItem 
                     key={user.id}
