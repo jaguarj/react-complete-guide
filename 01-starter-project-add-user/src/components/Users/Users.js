@@ -11,7 +11,6 @@ const Users = (props) => {
             <Card>
                 <UsersList userDataList={props.data}></UsersList>
             </Card>
-            
         </div>
 
     )
