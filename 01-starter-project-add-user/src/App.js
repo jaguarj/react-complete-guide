@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-
+import AddUser from './components/Users/AddUser';
 import Users from './components/Users/Users';
 
 const DUMMY_USERS = [
@@ -28,7 +28,8 @@ console.log("DUMMY_USERS", DUMMY_USERS)
 function App() {
   return (
     <div>
-      <Users data={DUMMY_USERS}></Users>
+      <AddUser />
+      {/* <Users data={DUMMY_USERS}></Users> */}
     </div>
 
     // <div className="App">

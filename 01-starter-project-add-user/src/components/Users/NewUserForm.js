@@ -9,6 +9,7 @@ const NewUserForm = (props) => {
     // 4. Add new user to list.
 
     const [addEnteredUser, setAddEnteredUser] = useState('');
+    const [addEnteredUserAge, setAddEnteredUserAge] = useState('');
     // Pick here tomorrow from when you left off. Compare CourseInput.js to this file.
 
     const enteredUser = (e) => {
@@ -38,6 +39,8 @@ const NewUserForm = (props) => {
         <div className="user-form">
            <form id="add_new_user" onSubmit={formSubmitHandler}>
                <label>Add New User</label>
+               <input type="text" onChange={enteredUser}/>
+               <label>Age</label>
                <input type="text" onChange={enteredUser}/>
            </form>
            <button type="submit">Add New User</button>
