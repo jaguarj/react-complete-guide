@@ -22,7 +22,7 @@ const DUMMY_USERS = [
   },
 ];
 
-console.log("DUMMY_USERS", DUMMY_USERS)
+// console.log("DUMMY_USERS", DUMMY_USERS)
 
 
 function App() {
