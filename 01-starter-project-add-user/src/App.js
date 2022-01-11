@@ -1,36 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import AddUser from './components/Users/AddUser';
-import Users from './components/Users/Users';
+import UsersList from './components/Users/UsersList';
 
 const DUMMY_USERS = [
   {
     id: "1234qwerty",
+    age: 34,
     name: "Jim"
   },
   {
     id: "2345qwerty",
+    age: 30,
     name: "James"
   },
   {
     id: "3456qwerty",
+    age: 23,
     name: "Kim"
   },
   {
     id: "4567qwerty",
+    age: 10,
     name: "Mike"
   },
 ];
 
-// console.log("DUMMY_USERS", DUMMY_USERS)
-
-
 function App() {
+ const [usersList, setUsersList] = useState([]);
+ const addUserHandler = (userName, userAge) => {
+  setUsersList((prevUsersList) => {
+    return [...prevUsersList, {id: new Date(), name: userName, age: userAge}];
+  });
+ };
+
   return (
     <div>
-      <AddUser />
-      {/* <Users data={DUMMY_USERS}></Users> */}
+      <AddUser onAddUser={addUserHandler}/>
+      <UsersList userDataList={usersList} />
     </div>
+    
 
     // <div className="App">
     //   <header className="App-header">
