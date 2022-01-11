@@ -3,31 +3,23 @@ import './App.css';
 import AddUser from './components/Users/AddUser';
 import UsersList from './components/Users/UsersList';
 
-const DUMMY_USERS = [
+const testUsersList = [
   {
-    id: "1234qwerty",
-    age: 34,
-    name: "Jim"
+    id: Math.random().toString(),
+    age: 32,
+    name: "Mac"
   },
   {
-    id: "2345qwerty",
-    age: 30,
-    name: "James"
-  },
-  {
-    id: "3456qwerty",
-    age: 23,
+    id: Math.random().toString(),
+    age: 20,
     name: "Kim"
-  },
-  {
-    id: "4567qwerty",
-    age: 10,
-    name: "Mike"
-  },
+  }
 ];
 
 function App() {
- const [usersList, setUsersList] = useState([]);
+
+ const [usersList, setUsersList] = useState(testUsersList);
+
  const addUserHandler = (userName, userAge) => {
   setUsersList((prevUsersList) => {
     return [...prevUsersList, {id: Math.random().toString(), name: userName, age: userAge}];
@@ -37,7 +29,7 @@ function App() {
   return (
     <div>
       <AddUser onAddUser={addUserHandler}/>
-      <UsersList userDataList={usersList} />
+      <UsersList userDataList={usersList}/>
     </div>
     
 
