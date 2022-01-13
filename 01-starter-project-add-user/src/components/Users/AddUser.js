@@ -6,8 +6,14 @@ import classes from './AddUser.module.css';
 
 const AddUser = (props) => {
 	// ======================== 
-	// Refs are should only be used for 'read-only' and you
-	// should manipulate the DOM with them 
+	// Refs should only be used for 'read-only' data; you
+	// shouldn't manipulate the DOM with them, and if you do, this is called
+	// 'uncontrolled components' b/c we are controlling the state by setting values
+	// without using React but instead the native DOM Api.
+	// The logic is set locally as internal state so the value is not controlled by React.
+
+	// 'Controlled components' are components which uses React 'useState'
+	// which in turn feeds data back into the component.
 	// ========================
 
 	const nameInputRef = useRef();
